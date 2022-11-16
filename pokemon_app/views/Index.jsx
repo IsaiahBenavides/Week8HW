@@ -17,7 +17,7 @@ class Index extends React.Component {
                                         <a href={`/pokemon/${i}`}>
                                             {capitalized}
                                         </a>{` `}
-                                        <img src={pokemon.img} alt="" />
+                                        {/* <img src={pokemon.img} alt="" /> */}
                                     </li>
                                 )
                             })

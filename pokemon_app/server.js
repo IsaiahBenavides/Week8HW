@@ -13,11 +13,12 @@ app.get(`/`, (req, res) =>{
 });
 
 app.get(`/pokemon`, (req, res) =>{
-    res.render(`Index`);
+    res.render(`Index`, {pokemon: pokemon});
 });
 
 app.get(`/pokemon/:id`, (req, res) =>{
-    res.send(req.params.id);
+    // res.send(req.params.id);
+    res.render(`Show`, pokemon[req.params.id])
 });
 
 app.listen(port, ()=>{
