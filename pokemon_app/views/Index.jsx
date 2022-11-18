@@ -1,8 +1,8 @@
 const React = require(`React`);
-const pokemon = require("../models/pokemon");
 
 class Index extends React.Component {
     render() {
+        const { pokemon } = this.props
         return (
             <div>
                 <h1>Look at all the Pokemon!</h1>
@@ -17,7 +17,7 @@ class Index extends React.Component {
                                 return (
                                     <li key = {i}>
                                         This is{` `}
-                                        <a href={`/pokemon/${i}`}>
+                                        <a href={`/pokemon/${pokemon._id}`}>
                                             {capitalized}
                                         </a>{` `}
                                         {/* <img src={pokemon.img} alt="" /> */}
