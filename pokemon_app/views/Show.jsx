@@ -9,7 +9,7 @@ class Show extends React.Component {
             <div>
                 <h1>Gotta Catch 'Em All!</h1>
                 <h2>{name[0].toLocaleUpperCase() + name.substring(1)}</h2>
-                <img src={`${img}.jpg`} alt="" />
+                <img src={`http://img.pokemondb.net/artwork/${name}.jpg`} alt="" />
                 <a href="/pokemon">BACK</a>
             </div>
         )

@@ -6,6 +6,9 @@ class Index extends React.Component {
         return (
             <div>
                 <h1>Look at all the Pokemon!</h1>
+                <nav>
+                    <a href="/pokemon/new">Create Your Pokemon!</a>
+                </nav>
                 <div>
                     <ul>
                         {

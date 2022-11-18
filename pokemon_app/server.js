@@ -8,6 +8,8 @@ const reactViews = require(`express-react-views`)
 app.set(`view engine`, `jsx`);
 app.engine(`jsx`, reactViews.createEngine());
 
+app.use(express.urlencoded({extended:false}))
+
 app.get(`/`, (req, res) =>{
     res.send(`Welcome to the Pokemon App!`);
 });
@@ -15,6 +17,16 @@ app.get(`/`, (req, res) =>{
 app.get(`/pokemon`, (req, res) =>{
     res.render(`Index`, {pokemon: pokemon});
 });
+
+app.get(`/pokemon/new`, (req,res) =>{
+    res.render(`New`)
+})
+
+app.post(`/pokemon`, (req,res) =>{
+    pokemon.push(req.body)
+    console.log(req.body)
+    res.redirect(`/pokemon`)
+})
 
 app.get(`/pokemon/:id`, (req, res) =>{
     // res.send(req.params.id);
