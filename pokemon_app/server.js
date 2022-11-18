@@ -51,8 +51,15 @@ app.post(`/pokemon`, (req,res) =>{
 })
 
 app.get(`/pokemon/:id`, (req, res) =>{
-    // res.send(req.params.id);
-    res.render(`Show`, pokemon[req.params.id])
+    Pokemon.findById(req.params.id, (error, foundPokemon)=>{
+        if(!error){
+            res.status(200).render(`Show`,{
+                pokemon: foundPokemon
+            })
+        }else{
+            res.status(400),send(error)
+        }
+    })
 });
 
 app.listen(port, ()=>{
